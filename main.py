@@ -26,7 +26,7 @@ def main():
     log_lines = reader.read(log_file_path)
     parsed_data = apache_parser.parse(log_lines)
     stats, total = aggregator.aggregate(parsed_data)
-    terminal_formatter.format(stats, total)
+    print(terminal_formatter.format(stats, total))
 
 if __name__ == "__main__":
     main()
