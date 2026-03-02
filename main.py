@@ -1,8 +1,7 @@
-from Readers.log_reader import read_log
-from Readers.db_reader import read_db
-from Parsers.apache_parser import parse
-from Analyzers.analyzer import analyze
-from Formatters.terminal_format import output_format
+from Readers.log_reader import LogReader
+from Parsers.apache_parser import ApacheParser
+from Analyzers.analyzer import Analyzer
+from Formatters.terminal_format import TerminalFormatter
 
 import sys
 
@@ -13,8 +12,8 @@ def main():
 
     log_file_path = sys.argv[1]
     print(f"Analyzing file: {log_file_path}...\n")
-    log_lines = read_log(log_file_path)
-    parsed_data = parse(log_lines)
+    log_lines = LogReader().read(log_file_path)
+    parsed_data = ApacheParser().parse(log_lines)
     analyzed_data = analyze(parsed_data)
     output_format()
 
