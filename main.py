@@ -1,5 +1,5 @@
-from Readers.log_reader import read
-from Readers.db_reader import read
+from Readers.log_reader import read_log
+from Readers.db_reader import read_db
 from Parsers.apache_parser import parse
 from Analyzers.analyzer import analyze
 from Formatters.terminal_format import output_format
@@ -13,7 +13,10 @@ def main():
 
     log_file = sys.argv[1]
     print(f"Analyzing file: {log_file}...\n")
-
+    log_lines = read_log(log_file)
+    parsed_data = parse(log_lines)
+    analyzed_data = analyze(parsed_data)
+    output_format()
 
 if __name__ == "__main__":
     main()
