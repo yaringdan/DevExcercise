@@ -11,9 +11,9 @@ def main():
         print("Usage: python main.py <log_file_path>")
         return
 
-    log_file = sys.argv[1]
-    print(f"Analyzing file: {log_file}...\n")
-    log_lines = read_log(log_file)
+    log_file_path = sys.argv[1]
+    print(f"Analyzing file: {log_file_path}...\n")
+    log_lines = read_log(log_file_path)
     parsed_data = parse(log_lines)
     analyzed_data = analyze(parsed_data)
     output_format()
