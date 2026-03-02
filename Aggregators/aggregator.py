@@ -1,4 +1,4 @@
-class LogAggregator:
+class Aggregator:
     def aggregate(self, parsed_data):
         if not parsed_data: return {}, 0
         
