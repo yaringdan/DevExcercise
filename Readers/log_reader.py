@@ -1,6 +1,7 @@
 from reader import Reader
 
 class LogReader(Reader):
+    @staticmethod
     def read(self, file_path):
         lines = []
         try:

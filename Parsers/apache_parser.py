@@ -1,5 +1,6 @@
 from parser import Parser
 from readers import BinaryDBReader
+from readers import CSVDBReader
 
 
 class ApacheParser(Parser):
@@ -9,6 +10,7 @@ class ApacheParser(Parser):
             "OS": self.parse_user_agent[0],
             "Browser": self.parse_user_agent[1]
         }
+    @staticmethod
     def parse(self, raw_data):
         for line in raw_data:
             pass
