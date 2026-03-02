@@ -1,4 +1,4 @@
-from formatter import Formatter
+from Formatters.formatter import Formatter
 
 class TerminalFormatter(Formatter):
     def show(self, stats, total):

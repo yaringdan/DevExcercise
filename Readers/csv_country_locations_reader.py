@@ -1,4 +1,4 @@
-from reader import CSVDBReader
+from Readers.csv_db_reader import CSVDBReader
 
 class CSVCountryLocationsReader(CSVDBReader):
     def __init__(self, file_path):

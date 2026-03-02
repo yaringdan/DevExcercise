@@ -1,10 +1,10 @@
-from reader import CSVDBReader
+from Readers.csv_db_reader import CSVDBReader
 import ipaddress
 
 class CSVCountryIPV4Reader(CSVDBReader):
     def __init__(self, file_path):
         self.file_path = file_path
-        self.networks = []
+        self.network_data = []
         self.load_data()
         
     def load_data(self):

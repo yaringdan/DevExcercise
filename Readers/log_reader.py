@@ -1,4 +1,4 @@
-from reader import Reader
+from Readers.reader import Reader
 
 class LogReader(Reader):
     def read(self, file_path):

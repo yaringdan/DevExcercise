@@ -1,4 +1,4 @@
-from parser import Parser
+from Parsers.parser import Parser
 from ua_parser import user_agent_parser
 
 class ApacheParser(Parser):
@@ -28,8 +28,8 @@ class ApacheParser(Parser):
         return results
     
     def parse_country(self, ip, parsed_ua):
-        geo_id = self.network_reader.find_id_by_ip(ip)
-        return self.location_reader.get_country_name(geo_id) if geo_id else "Unknown"
+        geo_id = self.country_ipv4_reader.get_id_by_ip(ip)
+        return self.country_locations_reader.get_country_name(geo_id) if geo_id else "Unknown"
 
     def parse_os(self, ip, parsed_ua):
         return parsed_ua.get('os', {}).get('family', 'Unknown')

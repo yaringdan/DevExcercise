@@ -1,4 +1,4 @@
-from reader import Reader
+from Readers.reader import Reader
 import csv
 
 class CSVDBReader(Reader):
@@ -7,7 +7,8 @@ class CSVDBReader(Reader):
             with open(file_path, mode='r') as f:
                 reader = csv.DictReader(f)
                 
-                return reader
+                return list(reader)
                     
         except FileNotFoundError:
             print("File not found.")
+            return []
