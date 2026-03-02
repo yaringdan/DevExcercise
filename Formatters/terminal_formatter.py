@@ -10,5 +10,3 @@ class TerminalFormatter(Formatter):
             for value, count in sorted_data:
                 percentage = (count / total) * 100
                 print(f"{value} {percentage:.2f}%")
-            
-            print()
