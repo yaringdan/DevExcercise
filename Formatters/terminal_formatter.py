@@ -1,7 +1,7 @@
 from Formatters.formatter import Formatter
 
 class TerminalFormatter(Formatter):
-    def show(self, stats, total):
+    def format(self, stats, total):
         for field, counts in stats.items():
             print(f"{field.capitalize()}:")
             
